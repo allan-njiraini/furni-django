@@ -1,33 +1,40 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from .models import Product
+from.models import Employees
+from .models import Chair
 
 # Create your views here.
 
 def home(request):
-    return render(request, 'index.html')
+    product = Product.objects.all()
+    return render(request, 'index.html', {"product":product, "navbar":"home"})
 
 def about(request):
-    return render(request, 'about.html')
+    staff = Employees.objects.all()
+    return render(request, 'about.html', {"staff":staff, "navbar":"about"})
 
 def blog(request):
-    return render(request, 'blog.html')
+    return render(request, 'blog.html', {"navbar":"blog"})
 
 def cart(request):
-    return render(request, 'cart.html')
+    return render(request, 'cart.html', {"navbar":"cart"})
 
 def checkout(request):
-    return render(request, 'checkout.html')
+    return render(request, 'checkout.html', {"navbar":"checkout"})
 
 def services(request):
-    return render(request, 'services.html')
+    product = Product.objects.all()
+    return render(request, 'services.html', {"product":product ,"navbar":"services"})
 
 def shop(request):
-    return render(request, 'shop.html')
+    chair = Chair.objects.all()
+    return render(request, 'shop.html', {"chair":chair, "navbar":"shop"})
 
 def thankyou(request):
-    return render(request, 'thankyou.html')
+    return render(request, 'thankyou.html', {"navbar":"thankyou"})
 
 def contact(request):
-    return render(request, 'contact.html')
+    return render(request, 'contact.html', {"navbar":"contact"})
 
 

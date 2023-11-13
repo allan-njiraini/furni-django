@@ -133,46 +133,20 @@
 					<!-- End Column 1 -->
 
 					<!-- Start Column 2 -->
+
+				{%for i in product%}
 					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
 						<a class="product-item" href="#">
-							<img src={%static "images/product-1.png"%} class="img-fluid product-thumbnail">
-							<h3 class="product-title">Nordic Chair</h3>
-							<strong class="product-price">7,850.00 KES</strong>
-
-							<span class="icon-cross">
-								<img src={%static "images/cross.svg"%} class="img-fluid">
-							</span>
-						</a>
-					</div> 
-					<!-- End Column 2 -->
-
-					<!-- Start Column 3 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-						<a class="product-item" href="#">
-							<img src={%static "images/product-2.png"%} class="img-fluid product-thumbnail">
-							<h3 class="product-title">Kruzo Aero Chair</h3>
-							<strong class="product-price">8,550.00 KES</strong>
-
-							<span class="icon-cross">
-								<img src="images/cross.svg" class="img-fluid">
-							</span>
-						</a>
-					</div>
-					<!-- End Column 3 -->
-
-					<!-- Start Column 4 -->
-					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-						<a class="product-item" href="#">
-							<img src={%static "images/product-3.png"%} class="img-fluid product-thumbnail">
-							<h3 class="product-title">Ergonomic Chair</h3>
-							<strong class="product-price">5,550.00 KES</strong>
+							<img src=/media/{{i.image}} class="img-fluid product-thumbnail">
+							<h3 class="product-title">{{i.title}}</h3>
+							<strong class="product-price">{{i.price}} KES</strong>
 
 							<span class="icon-cross">
 								<img src={%static "images/cross.svg"%} class="img-fluid">
 							</span>
 						</a>
 					</div>
-					<!-- End Column 4 -->
+				{%endfor%}
 
 				</div>
 			</div>
